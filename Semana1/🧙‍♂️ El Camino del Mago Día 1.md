@@ -85,16 +85,22 @@ Para crear listas, siempre necesitamos una etiqueta "madre" que defina el tipo y
   <li>Segundo elemento</li>
 </ul>
 ```
+>[!TIP] El atributo type ayuda a elegir el modelo de los punteros de la lista 
+>para ul existe: disc, circle, square, none
+>para ol existe:1, a, A, i, I
 ## 6. Enlaces: Conectando el Contenido (`<a>`)
 
 La etiqueta `<a>` (anchor) es la que permite crear hipervínculos a otras páginas web, archivos o secciones del mismo documento.
 
 Atributos clave:
 - href: Es el atributo más importante; aquí colocas la URL o la ruta del archivo al que quieres dirigir al usuario.
-- tar`get: Define dónde se abrirá el enlace.
+- target: Define dónde se abrirá el enlace.
 	- `_self` (predeterminado): Abre el enlace en la misma pestaña.
 	- `_blank`: Abre el enlace en una nueva pestaña.
-- `rel="noopener noreferrer"`: Una buena práctica de seguridad que debes usar siempre que utilices target="_blank" para proteger tu sitio.
+	*otras que ya no se usan mucho pero pueden servir*
+	- `_parent`: Carga el archivo sobre la página padre (si es que existe, si no se comporta como `“_self”`.
+	- `_top`: Carga la url en el contexto más alto de navegación, posiblemente index.
+- `rel="noopener noreferrer"`: Una buena práctica de seguridad que debes usar siempre que utilices target=`"_blank"` para proteger tu sitio.
 
 ## 7. Rutas Relativas vs. Absolutas
 
@@ -118,3 +124,30 @@ Ejemplo de código:
 ```HTML
 <img src="img/mago.png" alt="Ilustración de un mago principiante" width="300">
 ```
+## 9. 🛠️ Herramientas de Poder: VS Code Like a Pro
+
+Para ser un verdadero "mago" del código, necesitas que tu libro mágico (el editor) trabaje para ti.
+
+### 1. Extensiones Imprescindibles
+
+En VS Code, ve al icono de cuadrados en la barra lateral izquierda e instala estas tres:
+
+* Live Server: Permite abrir un servidor local para ver los cambios de tu HTML en tiempo real. ¡Guardas el archivo y la página se actualiza sola!
+* Prettier: Formatea tu código automáticamente. Si dejas todo desordenado, Prettier lo alinea por ti para que sea legible.
+* Auto Close Tag: Cuando escribes una etiqueta de apertura (ej. `<div>`), VS Code escribe automáticamente la de cierre (`</div>`).
+### 2. El Truco Maestro: Emmet Shortcuts
+VS Code viene con **Emmet** integrado. Es un motor de abreviaciones que te permite escribir estructuras complejas en segundos.
+
+| **Si escribes...** | **Presionas...** | **Obtienes...**                                   |
+| ------------------ | ---------------- | ------------------------------------------------- |
+| `!`                | `Tab` o `Enter`  | **La estructura completa** de un documento HTML5. |
+| `h1{Hola}`         | `Tab`            | `<h1>Hola</h1>`                                   |
+| `p*3`              | `Tab`            | Crea **3 párrafos** vacíos automáticamente.       |
+| `ul>li*3`          | `Tab`            | Una lista desordenada con **3 elementos** dentro. |
+| `img`              | `Tab`            | `<img src="" alt="">` (con los atributos listos). |
+
+### 3. Atajos de Teclado (Windows/Linux)
+Aprender estos 3 te ahorrará horas de vida:
+- **`Alt` + `Z`**: Ajuste de línea (para que el texto no se salga de la pantalla y tengas que usar el scroll horizontal).
+- **`Ctrl` + `/`**: Comentar/Descomentar una línea de código.
+- **`Alt` + `↑ / ↓`**: Mueve la línea de código donde estás parado hacia arriba o hacia abajo.
