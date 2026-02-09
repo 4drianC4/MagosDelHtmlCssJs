@@ -110,6 +110,7 @@ Para que los enlaces y las imágenes funcionen, debes saber cómo referenciarlos
 | ---------------- | ----------------------------------------------------------------------- | ------------------------------------------ |
 | **Absoluta**     | La dirección completa desde la raíz o una URL completa.                 | `https://google.com` o `C:\fotos\logo.png` |
 | **Relativa**     | La ubicación del archivo respecto al documento donde estás escribiendo. | `images/foto.jpg` o `/contacto.html`       |
+|                  |                                                                         |                                            |
 
 ## 8. Imágenes en HTML (`<img>`)
 
