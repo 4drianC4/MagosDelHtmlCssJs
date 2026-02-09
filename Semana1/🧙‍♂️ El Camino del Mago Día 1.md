@@ -12,7 +12,7 @@ HTML (HyperText Markup Language) es el componente fundamental de la web. No es u
 - CSS: Define la apariencia (la "ropa").
 - JavaScript: Define la funcionalidad (el "comportamiento").
 
->[!INFO] Nota importante: 
+>[!INFO] LOS LENGUAJES DE MARCADO NO SON LENGUAJES DE PROGRAMACIÓN 
 >Los lenguajes de marcado como HTML, XML o LaTeX utilizan reglas para estructurar y codificar documentos, indicando al navegador cómo debe mostrarse la información.
 
 ## 2. Preparando el Entorno de Trabajo
@@ -20,11 +20,18 @@ HTML (HyperText Markup Language) es el componente fundamental de la web. No es u
 Para empezar a escribir código, necesitas un editor. El estándar de la industria es Visual Studio Code (VS Code).
 
 Pasos rápidos para configurar:
-1. Descarga: Ve a [code.visualstudio.com](https://code.visualstudio.com).
+1. Descarga: Ve a https://code.visualstudio.com/download.
 2. Instalación: Durante el proceso en Windows, asegúrate de marcar la casilla "Agregar al PATH" y "Abrir con Code" para facilitar el acceso a tus carpetas.
 3. Tu primer archivo: Crea un archivo con extensión .html (ejemplo: index.html).
+![[Pasted image 20260209155058.png]]
+
+>[!TIP] También puedes utilizar compiladores online
+>https://onecompiler.com/html
 
 ## 3. Estructura Básica de un Documento HTML
+
+>[!INFO] Sobre la estructura de un documento html...
+>la estructura de un documento HTML  se compone de etiquetas, las cuales informan al navegador sobre la estructura de una página web. Se escriben entre signos de menor y mayor (< >) y se pueden clasificar en etiquetas de cierre automático y etiquetas que necesitan cerrarse.
 
 Todo documento HTML profesional debe seguir esta estructura mínima para que el navegador lo interprete correctamente:
 
@@ -36,7 +43,7 @@ Todo documento HTML profesional debe seguir esta estructura mínima para que el 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Primera Página</title>
 </head>
-<body>
+	<body>
     </body>
 </html>
 ```
@@ -111,10 +118,3 @@ Ejemplo de código:
 ```HTML
 <img src="img/mago.png" alt="Ilustración de un mago principiante" width="300">
 ```
-
-## 9. Consejos de Mejora (De Presentación a Guía)
-
-En tus diapositivas originales, la información sobre rutas estaba un poco mezclada con comandos de sistema operativo. Para tu guía Markdown, te sugiero este enfoque más limpio:
-- Semántica primero: Recuerda que el `<body>` debe ser semántico para que los navegadores y buscadores entiendan tu página.
-- Jerarquía de Títulos: No abuses del `<h1>`. Solo debe haber uno por página (el título principal). Usa del `<h2>` al `<h6>` para subtítulos.
-- Listas con propósito: Usa `<ul>` para elementos donde el orden no importa (como una lista de compras) y `<ol>` para pasos de un proceso (como una receta).
