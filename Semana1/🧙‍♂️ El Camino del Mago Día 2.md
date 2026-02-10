@@ -186,3 +186,26 @@ Combina semántica y formularios creando una página de registro.
   <button type="submit">Enviar Solicitud</button>
 </form>
 ```
+
+### 9. Tablas en HTML: Organizando el Caos (`<table>`)
+
+Antiguamente se usaban tablas para maquetar toda la web (¡un horror!), pero hoy en día su uso es exclusivo para **datos tabulados**: filas y columnas de información.
+
+#### Las Etiquetas de la Tabla
+
+Imagina una tabla como una estantería de pociones. Necesitas la estantería, las repisas y los frascos.
+
+- **`<table>`**: El contenedor principal. Es la estantería completa.
+    
+- **`<caption>`**: El título de la tabla. Se pone justo después de abrir `<table>`.
+    
+- **`<tr>`** (_Table Row_): Cada una de las filas horizontales.
+    
+- **`<th>`** (_Table Header_): Celdas de encabezado (títulos de columna). Por defecto, el texto se ve en **negrita** y centrado.
+    
+- **`<td>`** (_Table Data_): Celdas de datos normales. Es donde va la información.
+    
+
+#### Estructura Visual
+
+Plaintext
