@@ -187,25 +187,78 @@ Combina semántica y formularios creando una página de registro.
 </form>
 ```
 
-### 9. Tablas en HTML: Organizando el Caos (`<table>`)
+## 9. Tablas en HTML: Organizando el Caos (`<table>`)
 
-Antiguamente se usaban tablas para maquetar toda la web (¡un horror!), pero hoy en día su uso es exclusivo para **datos tabulados**: filas y columnas de información.
-
-#### Las Etiquetas de la Tabla
-
+Antiguamente se usaban tablas para maquetar toda la web (¡un horror!), pero hoy en día su uso es exclusivo para datos tabulados: filas y columnas de información.
+Las Etiquetas de la Tabla
 Imagina una tabla como una estantería de pociones. Necesitas la estantería, las repisas y los frascos.
+- `<table>`: El contenedor principal. Es la estantería completa.
+- `<caption>`: El título de la tabla. Se pone justo después de abrir `<table>`.
+- `<tr>` (Table Row): Cada una de las filas horizontales.
+- `<th>` (Table Header): Celdas de encabezado (títulos de columna). Por defecto, el texto se ve en negrita y centrado.
+- `<td>` (Table Data): Celdas de datos normales. Es donde va la información.
 
-- **`<table>`**: El contenedor principal. Es la estantería completa.
-    
-- **`<caption>`**: El título de la tabla. Se pone justo después de abrir `<table>`.
-    
-- **`<tr>`** (_Table Row_): Cada una de las filas horizontales.
-    
-- **`<th>`** (_Table Header_): Celdas de encabezado (títulos de columna). Por defecto, el texto se ve en **negrita** y centrado.
-    
-- **`<td>`** (_Table Data_): Celdas de datos normales. Es donde va la información.
-    
+Estructura Visual
+```HTML
+<table>
+  <caption>Título</caption>
+  <tr> (Fila de Encabezados)
+     <th>   <th>   <th>
+  </tr>
+  <tr> (Fila de Datos 1)
+     <td>   <td>   <td>
+  </tr>
+  <tr> (Fila de Datos 2)
+     <td>   <td>   <td>
+  </tr>
+</table>
+```
 
-#### Estructura Visual
+Ejemplo Práctico: Inventario de Hechizos
 
-Plaintext
+Vamos a crear una tabla para organizar los hechizos aprendidos.
+```
+HTML
+
+<table border="1">
+  <caption>Lista de Hechizos Básicos</caption>
+  
+  <tr>
+    <th>Hechizo</th>
+    <th>Tipo</th>
+    <th>Nivel de Maná</th>
+  </tr>
+
+  <tr>
+    <td>Lumos</td>
+    <td>Iluminación</td>
+    <td>Bajo</td>
+  </tr>
+
+  <tr>
+    <td>Wingardium Leviosa</td>
+    <td>Levitación</td>
+    <td>Medio</td>
+  </tr>
+
+  <tr>
+    <td>Expelliarmus</td>
+    <td>Defensa</td>
+    <td>Alto</td>
+  </tr>
+</table>
+```
+>[!INFO] Nota sobre border="1": 
+>Es útil para aprender, pero ten en cuenta que en el mundo profesional real, los bordes y colores siempre se controlan con CSS, no con atributos HTML.
+
+### Atributos Avanzados (Accesibilidad)
+Para que tu tabla sea accesible (y un mago de verdad), los encabezados `<th>` deberían tener el atributo scope.
+
+- scope="col": Indica que este encabezado es para toda la columna vertical.
+- scope="row": Indica que es para la fila horizontal.
+
+Ejemplo mejorado:
+
+```HTML
+<th>Hechizo</th> <th scope="col">Hechizo</th>
+```
