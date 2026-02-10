@@ -44,6 +44,8 @@ Todo documento HTML profesional debe seguir esta estructura mínima para que el 
     <title>Mi Primera Página</title>
 </head>
 	<body>
+		<div>
+		</div>	
     </body>
 </html>
 ```
