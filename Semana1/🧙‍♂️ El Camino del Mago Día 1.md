@@ -44,8 +44,7 @@ Todo documento HTML profesional debe seguir esta estructura mínima para que el 
     <title>Mi Primera Página</title>
 </head>
 	<body>
-		<div>
-		</div>	
+		
     </body>
 </html>
 ```
@@ -93,7 +92,7 @@ Para crear listas, siempre necesitamos una etiqueta "madre" que defina el tipo y
 ## 6. Enlaces: Conectando el Contenido (`<a>`)
 
 La etiqueta `<a>` (anchor) es la que permite crear hipervínculos a otras páginas web, archivos o secciones del mismo documento.
-
+`<a href="../fotodegato.png" target=>` 
 Atributos clave:
 - href: Es el atributo más importante; aquí colocas la URL o la ruta del archivo al que quieres dirigir al usuario.
 - target: Define dónde se abrirá el enlace.
