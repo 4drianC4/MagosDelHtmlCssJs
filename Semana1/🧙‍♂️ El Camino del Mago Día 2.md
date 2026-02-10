@@ -126,16 +126,16 @@ Envuelve todos los controles interactivos. Este cuenta con atributos importantes
 ### La etiqueta `<input>` (Entrada de datos)
 Es la pieza más versátil. Su comportamiento cambia radicalmente según el atributo type.
 
-|**Tipo (type)**|**Descripción**|**Ejemplo Visual**|
-|---|---|---|
-|`text`|Campo de texto normal de una línea.|Nombre, Apellido|
-|`password`|Oculta los caracteres con puntos.|Contraseña|
-|`email`|Valida que tenga formato de correo (@).|usuario@mail.com|
-|`number`|Solo permite números.|Edad, Cantidad|
-|`date`|Despliega un calendario.|Fecha de nacimiento|
-|`checkbox`|Casilla cuadrada para selección múltiple.|[x] Acepto términos|
-|`radio`|Círculo para selección única (solo uno a la vez).|( ) Sí ( ) No|
-|`submit`|Botón para enviar el formulario.|[ENVIAR]|
+| **Tipo (type)** | **Descripción**                                   | **Ejemplo Visual**  |
+| --------------- | ------------------------------------------------- | ------------------- |
+| `text`          | Campo de texto normal de una línea.               | Nombre, Apellido    |
+| `password`      | Oculta los caracteres con puntos.                 | Contraseña          |
+| `email`         | Valida que tenga formato de correo (@).           | usuario@mail.com    |
+| `number`        | Solo permite números.                             | Edad, Cantidad      |
+| `date`          | Despliega un calendario.                          | Fecha de nacimiento |
+| `checkbox`      | Casilla cuadrada para selección múltiple.         | [x] Acepto términos |
+| `radio`         | Círculo para selección única (solo uno a la vez). | ( ) Sí ( ) No       |
+| `submit`        | Botón para enviar el formulario.                  | [ENVIAR]            |
 
 ## 6. Etiquetas Auxiliares de Formulario
 ### `<label>` (Etiqueta)
@@ -217,9 +217,7 @@ Estructura Visual
 Ejemplo Práctico: Inventario de Hechizos
 
 Vamos a crear una tabla para organizar los hechizos aprendidos.
-```
-HTML
-
+```HTML
 <table border="1">
   <caption>Lista de Hechizos Básicos</caption>
   
@@ -248,6 +246,7 @@ HTML
   </tr>
 </table>
 ```
+
 >[!INFO] Nota sobre border="1": 
 >Es útil para aprender, pero ten en cuenta que en el mundo profesional real, los bordes y colores siempre se controlan con CSS, no con atributos HTML.
 
