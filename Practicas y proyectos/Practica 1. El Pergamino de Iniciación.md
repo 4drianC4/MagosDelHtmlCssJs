@@ -37,11 +37,7 @@ Utiliza al menos una vez las siguientes etiquetas:
 
 ## Guarda el archivo como:
 pergamino.html
+# Extra: Nivel de sabiduría +1
 
-  
-
-Extra: Nivel de sabiduría +1
-
-¿Quieres subir tu nivel antes del día 2?
-
+## ¿Quieres subir tu nivel antes del día 2?
 Agrega un enlace que lleve a un hechizo sorpresa (puede ser una canción, un video inspirador o tu hechizo favorito de internet).
