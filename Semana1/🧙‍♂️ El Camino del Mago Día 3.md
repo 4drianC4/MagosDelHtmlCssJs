@@ -97,6 +97,8 @@ Ejemplo visual en código:
     margin: 50px;          /* Empuja a los vecinos lejos */
 }
 ```
+
+---
 ## 7. Bordes: Estilo y Redondeo
 
 La propiedad border suele usarse de forma abreviada (shorthand) para ahorrar tiempo.
@@ -116,10 +118,13 @@ Es lo que hace que los botones se vean modernos.
 
 - border-radius: 10px; (Esquinas suaves).
 - border-radius: 50%; (Si el elemento es cuadrado, esto lo convierte en un círculo perfecto).
+
+---
 ## 8. Tipografía y Textos
 
 El 90% de la web es texto. Si sabes manejarlo, tu sitio ya se verá mejor que la mayoría.
 ### Propiedades de Fuente (font)
+
 - font-family: Define la tipografía. 
 	- Usa fuentes seguras o "Pilas de fuentes". Si el usuario no tiene la primera, cargará la segunda.
 - font-family: 'Arial', 'Helvetica', sans-serif;
@@ -130,21 +135,16 @@ El 90% de la web es texto. Si sabes manejarlo, tu sitio ya se verá mejor que la
 
 ### Propiedades de Texto (text)
 
-    text-align: Alineación (left, center, right, justify).
+- text-align: Alineación (left, center, right, justify).
+- text-decoration: Decoraciones.
+	- none (Quita el subrayado de los enlaces).
+	- underline (Subraya).
+- line-height: Altura de línea (espaciado entre renglones). Fundamental para que los párrafos largos se lean bien.
+	- Un valor de 1.5 suele ser perfecto para lectura.
 
-    text-decoration: Decoraciones.
+### Ejemplo de "Hechizo de Texto":
 
-        none (Quita el subrayado de los enlaces).
-
-        underline (Subraya).
-
-    line-height: Altura de línea (espaciado entre renglones). Fundamental para que los párrafos largos se lean bien.
-
-        Un valor de 1.5 suele ser perfecto para lectura.
-
-Ejemplo de "Hechizo de Texto":
-CSS
-
+```CSS
 p {
     font-family: 'Verdana', sans-serif;
     font-size: 16px;
@@ -156,3 +156,4 @@ a {
     text-decoration: none; /* Adiós subrayado feo */
     color: #ff4500;        /* Color naranja */
 }
+```
