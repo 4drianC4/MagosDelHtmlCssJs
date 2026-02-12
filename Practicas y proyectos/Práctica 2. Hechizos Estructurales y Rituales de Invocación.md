@@ -33,34 +33,14 @@ Debes construir tu propio Horario de Invocaciones en un nuevo documento html lla
 Investiga sobre los siguientes encantamientos y aplícalos al horario con estilos en línea (style="") por ahora:
 - Colores mágicos (color, background-color)
 - Tamaños de texto (font-size)
-Altura y anchura (width, height)
+- Altura y anchura (width, height)
+- Unidades mágicas: px, %
+# IMPORTANTE!!!
+## Ambos proyectos los debes de enlazar a tu pergamino.html dentro de un apartado llamado “Proyectos”
 
-Unidades mágicas: px, %
-
-  
-  
-
-IMPORTANTE!!!
-
-Ambos proyectos los debes de enlazar a tu pergamino.html dentro de un apartado llamado “Proyectos”
-
-  
-
-Extra Quest: Formulario de Contacto
-
+## Extra Quest: Formulario de Contacto
 Al final del pergamino.html, crea un formulario de contacto con:
-
-  
-
 1. Campo de nombre
-    
 2. Correo mágico
-    
 3. Mensaje
-    
 4. Botón de enviar
-    
-
-  
-
-Este formulario debe ir dentro de un <footer> semántico y marcar el cierre del pergamino.
