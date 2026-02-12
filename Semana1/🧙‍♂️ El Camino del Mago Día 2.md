@@ -203,13 +203,19 @@ Estructura Visual
 <table>
   <caption>Título</caption>
   <tr> (Fila de Encabezados)
-     <th>   <th>   <th>
+     <th> PERSONAS </th>  
+     <th> edad </th>  
+     <th> telefono </th>
   </tr>
   <tr> (Fila de Datos 1)
-     <td>   <td>   <td>
+     <td> Michael </td>   
+     <td> 25 </td>  
+     <td> 31231213 </td>
   </tr>
   <tr> (Fila de Datos 2)
-     <td>   <td>   <td>
+     <td> </td>  
+     <td> </td>  
+     <td> </td>
   </tr>
 </table>
 ```
