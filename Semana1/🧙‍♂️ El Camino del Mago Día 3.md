@@ -24,7 +24,7 @@ h1 {
 ## 3. ¿Dónde escribimos el hechizo? (Tipos de Inserción)
 
 Hay tres formas de conectar CSS con HTML, pero solo una es la "Vía del Mago Supremo".
-### A. Externa (La Profesional) 🏆
+### A. Externa (La Profesional)
 Creas un archivo separado (ej. style.css) y lo vinculas en el `<head>` de tu HTML.
 
 ```HTML
@@ -76,7 +76,7 @@ CSS nos permite definir colores de varias formas. Las más comunes son:
 - RGBA: Igual que el anterior, pero el último número es la Transparencia (Alpha) de 0 a 1. Ej: rgba(0, 0, 0, 0.5) (Negro medio transparente).
 
 ---
-## 6. El Modelo de Caja (The Box Model) 📦
+## 6. El Modelo de Caja (The Box Model)
 
 Este es el concepto más importante del diseño web. Todo elemento en HTML es, en realidad, una caja rectangular.
 
@@ -116,3 +116,43 @@ Es lo que hace que los botones se vean modernos.
 
 - border-radius: 10px; (Esquinas suaves).
 - border-radius: 50%; (Si el elemento es cuadrado, esto lo convierte en un círculo perfecto).
+## 8. Tipografía y Textos
+
+El 90% de la web es texto. Si sabes manejarlo, tu sitio ya se verá mejor que la mayoría.
+### Propiedades de Fuente (font)
+- font-family: Define la tipografía. 
+	- Usa fuentes seguras o "Pilas de fuentes". Si el usuario no tiene la primera, cargará la segunda.
+- font-family: 'Arial', 'Helvetica', sans-serif;
+- font-size: El tamaño.
+	- Usa px para empezar (ej. 16px), pero intenta aprender rem (relativo al tamaño base) para el futuro.
+- font-weight: El grosor.
+	- normal (400), bold (700).
+
+### Propiedades de Texto (text)
+
+    text-align: Alineación (left, center, right, justify).
+
+    text-decoration: Decoraciones.
+
+        none (Quita el subrayado de los enlaces).
+
+        underline (Subraya).
+
+    line-height: Altura de línea (espaciado entre renglones). Fundamental para que los párrafos largos se lean bien.
+
+        Un valor de 1.5 suele ser perfecto para lectura.
+
+Ejemplo de "Hechizo de Texto":
+CSS
+
+p {
+    font-family: 'Verdana', sans-serif;
+    font-size: 16px;
+    line-height: 1.6; /* El texto respira */
+    color: #333;      /* Gris oscuro lee mejor que negro puro */
+}
+
+a {
+    text-decoration: none; /* Adiós subrayado feo */
+    color: #ff4500;        /* Color naranja */
+}
