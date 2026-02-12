@@ -1,0 +1,10 @@
+#presentacion {
+    color:blue;
+    font-size: 30px;
+}
+
+.apartado {
+    background-color: rgb(25, 84, 152);
+    padding: 10px;
+    margin: 10px 0;
+}

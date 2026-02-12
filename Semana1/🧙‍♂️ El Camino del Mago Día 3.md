@@ -10,13 +10,11 @@ Si HTML es el esqueleto y la estructura, CSS (Cascading Style Sheets) es la piel
 CSS no funciona con etiquetas, sino con Reglas. Una regla tiene dos partes: a quién modificamos (selector) y qué le cambiamos (declaración).
 ```CSS
 /* SELECTOR */
-#TitulosPrincipales {
+h1 {
     /* PROPIEDAD: VALOR; */
     color: red;
     font-size: 20px;
 }
-
-#TitulosSecunda
 ```
 
 >[!INFO] ¡Ojo al detalle! 
