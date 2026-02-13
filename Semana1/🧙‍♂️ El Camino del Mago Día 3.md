@@ -55,12 +55,12 @@ Se escribe directamente en la etiqueta HTML.
 
 Para dar estilo, primero debes apuntar al elemento correcto.
 
-|**Selector**|**Símbolo**|**Ejemplo**|**Descripción**|
-|---|---|---|---|
-|**Universal**|`*`|`* { margin: 0; }`|Selecciona **todos** los elementos de la página. Se usa para reiniciar estilos.|
-|**Etiqueta**|(Nada)|`p { ... }`|Afecta a **todos** los párrafos `<p>` del sitio.|
-|**Clase**|`.`|`.boton { ... }`|Afecta a cualquier elemento que tenga `class="boton"`. **Es el más usado.**|
-|**ID**|`#`|`#header { ... }`|Afecta a un **único** elemento con `id="header"`.|
+| **Selector**  | **Símbolo** | **Ejemplo**        | **Descripción**                                                                 |
+| ------------- | ----------- | ------------------ | ------------------------------------------------------------------------------- |
+| **Universal** | `*`         | `* { margin: 0; }` | Selecciona **todos** los elementos de la página. Se usa para reiniciar estilos. |
+| **Etiqueta**  | (Nada)      | `p { ... }`        | Afecta a **todos** los párrafos `<p>` del sitio.                                |
+| **Clase**     | `.`         | `.boton { ... }`   | Afecta a cualquier elemento que tenga `class="boton"`. **Es el más usado.**     |
+| **ID**        | `#`         | `#header { ... }`  | Afecta a un **único** elemento con `id="header"`.                               |
 
 ### La analogía del Gremio:
 - Etiqueta: "¡Que todos los magos se levanten!" (Afecta a todos).

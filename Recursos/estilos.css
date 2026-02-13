@@ -4,7 +4,11 @@
 }
 
 .apartado {
-    background-color: rgb(25, 84, 152);
-    padding: 10px;
-    margin: 10px 0;
+    background-color: #3b19d3;
+    padding: 10px 0px;
+    margin: 10px;
+}
+
+p {
+    color: white;
 }
