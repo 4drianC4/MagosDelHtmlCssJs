@@ -16,3 +16,8 @@ p {
     color: white;
 }
 
+#contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
