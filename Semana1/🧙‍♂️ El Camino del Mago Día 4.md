@@ -59,7 +59,6 @@ Mientras Flexbox es para una dimensión, Grid es bidimensional (filas Y columnas
 ### Creando la Cuadrícula
 
 ```CSS
-
 .tablero {
     display: grid;
     /* Crea 3 columnas: dos de 100px y una automática */

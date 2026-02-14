@@ -1,0 +1,37 @@
+/* 1. EL TABLERO (Usamos GRID para la estructura macro) */
+.tablero {
+    display: grid;
+    /* Crea 3 columnas de igual tamaño */
+    grid-template-columns: 1fr 1fr 1fr; 
+    /* Un espacio de 20px entre tarjetas */
+    gap: 20px; 
+    padding: 20px;
+}
+
+/* 2. LA TARJETA (Usamos FLEXBOX para el contenido micro) */
+.tarjeta {
+    background-color: #f4f4f9;
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 15px;
+    height: 200px; /* Forzamos una altura para ver el efecto flex */
+    
+    /* Activamos Flexbox dentro de la tarjeta */
+    display: flex;
+    flex-direction: column; /* Apilamos título, texto y botón */
+    justify-content: space-between; /* El botón se va al fondo automáticamente */
+}
+
+/* Estilos extra para que se vea bonito */
+button {
+    background-color: #6a0dad; /* Morado mago */
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #8a2be2;
+}
