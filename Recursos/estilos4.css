@@ -2,7 +2,7 @@
 .tablero {
     display: grid;
     /* Crea 3 columnas de igual tamaño */
-    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-columns: 1fr 1fr 2fr; 
     /* Un espacio de 20px entre tarjetas */
     gap: 20px; 
     padding: 20px;
