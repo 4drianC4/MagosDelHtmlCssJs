@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧙‍♂️ Academia de Magos del HTML y CSS</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Cinzel:wght@600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- HEADER CON FLEXBOX -->
+    <header class="header-principal">
+        <div class="logo">🧙‍♂️ Academia de Magos</div>
+        <nav class="navegacion">
+            <a href="#misiones">Misiones</a>
+            <a href="#cartas">Cartas</a>
+            <a href="#galeria">Galería</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION CON ANIMACIONES -->
+    <section class="hero">
+        <h1 class="titulo-principal">Bienvenido al Mundo de la Magia Web</h1>
+        <p class="subtitulo">Domina CSS como un verdadero hechicero</p>
+        <button class="boton-magico">Comenzar Aventura</button>
+    </section>
+
+    <!-- TABLERO DE MISIONES (CSS GRID + FLEXBOX) -->
+    <section id="misiones" class="seccion-misiones">
+        <h2 class="titulo-seccion">🎯 Tablero de Misiones</h2>
+        <div class="tablero">
+            <article class="tarjeta nivel-facil">
+                <div class="icono-nivel">⭐</div>
+                <h3>Recoger Hierbas</h3>
+                <p>Busca mandrágoras en el bosque prohibido.</p>
+                <div class="etiqueta">Nivel: Fácil</div>
+                <button class="boton-mision">Aceptar Misión</button>
+            </article>
+
+            <article class="tarjeta nivel-medio">
+                <div class="icono-nivel">⭐⭐</div>
+                <h3>Poción de Verdad</h3>
+                <p>Mezcla ingredientes sin que explote el caldero.</p>
+                <div class="etiqueta">Nivel: Medio</div>
+                <button class="boton-mision">Aceptar Misión</button>
+            </article>
+
+            <article class="tarjeta nivel-dificil">
+                <div class="icono-nivel">⭐⭐⭐</div>
+                <h3>Duelo de Varitas</h3>
+                <p>Sobrevive 5 minutos contra el profesor de Defensa.</p>
+                <div class="etiqueta">Nivel: Difícil</div>
+                <button class="boton-mision">Aceptar Misión</button>
+            </article>
+
+            <article class="tarjeta nivel-epico">
+                <div class="icono-nivel">⭐⭐⭐⭐</div>
+                <h3>Examen Final</h3>
+                <p>Demuestra todos tus conocimientos ante el Gran Mago.</p>
+                <div class="etiqueta">Nivel: Épico</div>
+                <button class="boton-mision">Aceptar Misión</button>
+            </article>
+        </div>
+    </section>
+
+    <!-- CARTAS HOLOGRÁFICAS (TRANSFORMACIONES 3D) -->
+    <section id="cartas" class="seccion-cartas">
+        <h2 class="titulo-seccion">🃏 Cartas Mágicas Holográficas</h2>
+        <p class="descripcion-seccion">Pasa el mouse sobre las cartas para revelar sus secretos</p>
+        
+        <div class="contenedor-cartas">
+            <div class="carta-container">
+                <div class="carta">
+                    <div class="cara frente">
+                        <div class="simbolo-carta">🔮</div>
+                        <h3>Visión Arcana</h3>
+                    </div>
+                    <div class="cara atras">
+                        <p>Revela el futuro del diseño web</p>
+                        <span class="poder">Poder: 85</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carta-container">
+                <div class="carta">
+                    <div class="cara frente">
+                        <div class="simbolo-carta">⚡</div>
+                        <h3>Rayo de Código</h3>
+                    </div>
+                    <div class="cara atras">
+                        <p>Ejecuta hechizos instantáneamente</p>
+                        <span class="poder">Poder: 92</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carta-container">
+                <div class="carta">
+                    <div class="cara frente">
+                        <div class="simbolo-carta">🌟</div>
+                        <h3>Estrella CSS</h3>
+                    </div>
+                    <div class="cara atras">
+                        <p>Ilumina cualquier diseño</p>
+                        <span class="poder">Poder: 78</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERÍA CON GRID RESPONSIVE -->
+    <section id="galeria" class="seccion-galeria">
+        <h2 class="titulo-seccion">📸 Galería de Elementos Mágicos</h2>
+        
+        <div class="galeria">
+            <div class="item-galeria item-1">
+                <span class="emoji-grande">🧪</span>
+                <p>Pociones</p>
+            </div>
+            <div class="item-galeria item-2">
+                <span class="emoji-grande">📚</span>
+                <p>Grimorio</p>
+            </div>
+            <div class="item-galeria item-3">
+                <span class="emoji-grande">🪄</span>
+                <p>Varita</p>
+            </div>
+            <div class="item-galeria item-4">
+                <span class="emoji-grande">🔥</span>
+                <p>Hechizos</p>
+            </div>
+            <div class="item-galeria item-5">
+                <span class="emoji-grande">💎</span>
+                <p>Cristales</p>
+            </div>
+            <div class="item-galeria item-6">
+                <span class="emoji-grande">🌙</span>
+                <p>Astronomía</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULARIO DE CONTACTO (PSEUDO-CLASES) -->
+    <section id="contacto" class="seccion-contacto">
+        <h2 class="titulo-seccion">✉️ Envía un Mensaje Mágico</h2>
+        
+        <form class="formulario-magico">
+            <div class="campo-formulario">
+                <label for="nombre">Nombre del Mago:</label>
+                <input type="text" id="nombre" placeholder="Gandalf el Gris" required>
+            </div>
+            
+            <div class="campo-formulario">
+                <label for="email">Correo Arcano:</label>
+                <input type="email" id="email" placeholder="mago@academia.com" required>
+            </div>
+            
+            <div class="campo-formulario">
+                <label for="mensaje">Tu Mensaje:</label>
+                <textarea id="mensaje" rows="5" placeholder="Escribe tu hechizo aquí..."></textarea>
+            </div>
+            
+            <button type="submit" class="boton-enviar">Enviar Mensaje 📨</button>
+        </form>
+    </section>
+
+    <!-- SECCIÓN DE DEMOSTRACIÓN DE PSEUDO-ELEMENTOS -->
+    <section class="seccion-demo">
+        <h2 class="titulo-seccion">🎨 Efectos Especiales</h2>
+        
+        <div class="contenedor-demos">
+            <div class="demo-box caja-decorada">
+                <h3>Pseudo-elementos</h3>
+                <p>Esta caja usa ::before y ::after</p>
+            </div>
+            
+            <div class="demo-box caja-animada">
+                <h3>Animación Continua</h3>
+                <p>¡Observa el resplandor!</p>
+            </div>
+            
+            <div class="demo-box caja-hover">
+                <h3>Efecto Hover</h3>
+                <p>Pasa el mouse por aquí</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- LISTA CON NTH-CHILD -->
+    <section class="seccion-lista">
+        <h2 class="titulo-seccion">📜 Conjuros Básicos</h2>
+        
+        <ul class="lista-conjuros">
+            <li>Lumos - Luz en la punta de la varita</li>
+            <li>Nox - Apagar la luz</li>
+            <li>Accio - Llamar objetos</li>
+            <li>Wingardium Leviosa - Levitar objetos</li>
+            <li>Expelliarmus - Desarmar oponentes</li>
+            <li>Protego - Escudo protector</li>
+            <li>Alohomora - Abrir cerraduras</li>
+            <li>Stupefy - Aturdir enemigos</li>
+        </ul>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2026 Academia de Magos del HTML y CSS</p>
+        <p>Creado con 💜 y mucha magia</p>
+    </footer>
+
+    <!-- Elemento flotante animado -->
+    <div class="elemento-flotante">✨</div>
+</body>
+</html>
