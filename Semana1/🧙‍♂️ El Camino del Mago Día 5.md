@@ -50,7 +50,25 @@ button:hover {
     transform: scale(1.1);      /* Crece un poco */
 }
 ```
-## 3. Pseudo-elementos: Decoración Avanzada
+## Unidades de Medida: Más allá de los Píxeles
+
+En el diseño web moderno, usar solo px (píxeles) es un error, ya que son unidades fijas que no se adaptan bien.
+Existen dos tipos de unidades, absolutas y relativas.
+
+### Unidades Absolutas
+en general se considera que siempre tienen el mismo tamaño y la mayoría de estos valores son más útiles cuando se usan en una salida en formato impreso que en la salida de pantalla.
+
+![[Pasted image 20260218083058.png]]
+
+### Unidades Relativas (Las preferidas)
+Las unidades de longitud relativa son relativas a algo más, por ejemplo, al tamaño de letra del elemento principal o al tamaño de la ventana gráfica. La ventaja de usar unidades relativas es que con una planificación cuidadosa puedes lograr que el tamaño del texto u otros elementos escalan en relación con todo lo demás en la página.
+
+![[Pasted image 20260218083118.png]]
+- rem: Basada en el tamaño de fuente de la raíz (`<html>`). Por defecto, 1rem = 16px. Si el usuario cambia el tamaño de letra de su navegador por accesibilidad, tu web se adaptará.
+- em: Basada en el tamaño de fuente del elemento padre. Útil para padding y márgenes que deben crecer proporcionalmente al texto.
+- vw / vh (Viewport Width/Height): Basadas en el tamaño de la ventana del navegador. 100vw es el ancho total de la pantalla.
+- %: Útil para anchos de contenedores que deben ocupar una parte de su padre.
+## 4. Pseudo-elementos: Decoración Avanzada
 
 Permiten añadir contenido estético sin ensuciar tu HTML. Se escriben con cuatro puntos :: (aunque : suele funcionar, :: es el estándar moderno).
 
@@ -105,12 +123,12 @@ No basta con que el código funcione, debe verse profesional.
 3. Iconos: Usa librerías como FontAwesome o Google Icons para añadir símbolos visuales (lupas, casas, usuarios) en lugar de imágenes pesadas.
 4. Prototipado: Antes de escribir código, dibuja tu idea en papel o usa herramientas como Figma. Ahorrarás horas de correcciones.
 
-4. Ejercicio Final del Día 5: La Carta Holográfica 🃏
+## 6. Ejercicio Final del Día 5: La Carta Holográfica 🃏
 
 Vamos a crear una tarjeta que gire 3D al pasar el mouse.
 
-HTML:
-HTML
+### HTML:
+```HTML
 
 <div class="carta-container">
     <div class="carta">
@@ -118,10 +136,10 @@ HTML
         <div class="cara atras">Secreto revelado</div>
     </div>
 </div>
+```
 
-CSS (El truco de magia):
-CSS
-
+### CSS (El truco de magia):
+```CSS
 .carta-container {
     perspective: 1000px; /* Da profundidad 3D */
 }
@@ -155,3 +173,4 @@ CSS
     color: white;
     transform: rotateY(180deg); /* Ya está girada para esperar la vuelta */
 }
+```
