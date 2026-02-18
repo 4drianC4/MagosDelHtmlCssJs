@@ -1,0 +1,157 @@
+# CSS Avanzado: Adaptabilidad y Movimiento
+## 1. El Arte de la Metamorfosis: Responsive Design
+Antiguamente, las webs solo se veían en computadoras. Hoy, un mago debe asegurarse de que sus hechizos funcionen igual de bien en un celular pequeño que en una pantalla gigante.
+### Media Queries (@media)
+Son "condicionales" en CSS. Le dicen al navegador: "Si la pantalla mide X tamaño, aplica estos estilos distintos".
+#### Sintaxis Mágica:
+```CSS
+/* Estilos base (Generalmente para Móvil - Mobile First) */
+body {
+    background-color: white;
+    font-size: 16px;
+}
+/* CONDICIÓN: Si la pantalla es mayor a 768px (Tablet/PC) */
+@media (min-width: 768px) {
+    body {
+        background-color: #f0f0f0; /* El fondo cambia */
+        font-size: 20px;           /* La letra crece */
+    }
+}
+```
+
+### Los Puntos de Quiebre (Breakpoints)
+Son los anchos estándar donde solemos cambiar el diseño:
+
+    Móvil: Estilos por defecto (sin media query).
+    Tablet: min-width: 768px
+    Desktop: min-width: 1024px
+>[!INFO] Filosofía "Mobile First": 
+>Diseña primero para lo más difícil (la pantalla pequeña del celular) y luego expande el diseño para pantallas grandes. Es más fácil escalar hacia arriba que intentar meter un elefante en una caja de zapatos.
+
+## 2. Pseudo-clases: Reacción ante el Usuario
+
+| **Pseudo-clase** | **¿Cuándo se activa?**                                 | **Uso común**                       |
+| ---------------- | ------------------------------------------------------ | ----------------------------------- |
+| `:hover`         | Cuando el mouse pasa por encima.                       | Cambiar color de botones o enlaces. |
+| `:active`        | Mientras haces clic (el momento de presión).           | Efecto de "botón hundido".          |
+| `:focus`         | Cuando el elemento está seleccionado (con Tab o clic). | Resaltar el input de un formulario. |
+| `:nth-child(n)`  | Selecciona un "hijo" específico por su número.         | Tablas rayadas (pares/impares).     |
+
+### Ejemplo de Botón Interactivo:
+```CSS
+
+button {
+    background-color: blue;
+    transition: 0.3s; /* Suaviza el cambio */
+}
+
+button:hover {
+    background-color: darkblue; /* Al pasar el mouse */
+    transform: scale(1.1);      /* Crece un poco */
+}
+```
+## 3. Pseudo-elementos: Decoración Avanzada
+
+Permiten añadir contenido estético sin ensuciar tu HTML. Se escriben con cuatro puntos :: (aunque : suele funcionar, :: es el estándar moderno).
+
+- ::before: Inserta contenido antes del elemento.
+- ::after: Inserta contenido después del elemento.
+- ::first-letter: Da estilo solo a la primera letra (estilo libro antiguo).
+
+>[!INFO] Regla de Oro: 
+>Para que ::before o ::after funcionen, SIEMPRE debes poner la propiedad content: ''; (aunque esté vacía).
+
+## 4. Animaciones y Transiciones
+
+Hagamos que las cosas se muevan.
+### Transiciones (transition)
+Es la forma sencilla. Sirve para ir del Estado A al Estado B suavemente.
+transition: [propiedad] [duración] [tipo-de-movimiento];
+```CSS
+
+.caja {
+    width: 100px;
+    transition: width 1s ease-in-out; /* Tardará 1s en crecer */
+}
+.caja:hover {
+    width: 300px;
+}
+```
+### Animaciones (@keyframes)
+Es la forma compleja. Puedes controlar lo que pasa en cada momento (0%, 50%, 100%).
+
+1. Creas la animación:
+
+```CSS
+@keyframes rebote {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+```
+
+2. La aplicas al elemento:
+
+```CSS
+.pelota {
+    animation: rebote 2s infinite; /* Se repite por siempre */
+}
+```
+## 5. Buenas Prácticas de Diseño Visual
+
+No basta con que el código funcione, debe verse profesional.
+1. Paleta de Colores: No uses colores al azar. Usa la regla del 60-30-10 (60% color dominante, 30% secundario, 10% acento).
+2. Tipografía: Usa fuentes legibles. Evita Comic Sans a menos que seas un payaso. Google Fonts es tu amigo.
+3. Iconos: Usa librerías como FontAwesome o Google Icons para añadir símbolos visuales (lupas, casas, usuarios) en lugar de imágenes pesadas.
+4. Prototipado: Antes de escribir código, dibuja tu idea en papel o usa herramientas como Figma. Ahorrarás horas de correcciones.
+
+4. Ejercicio Final del Día 5: La Carta Holográfica 🃏
+
+Vamos a crear una tarjeta que gire 3D al pasar el mouse.
+
+HTML:
+HTML
+
+<div class="carta-container">
+    <div class="carta">
+        <div class="cara frente">🔮 Frente</div>
+        <div class="cara atras">Secreto revelado</div>
+    </div>
+</div>
+
+CSS (El truco de magia):
+CSS
+
+.carta-container {
+    perspective: 1000px; /* Da profundidad 3D */
+}
+
+.carta {
+    width: 200px;
+    height: 300px;
+    position: relative;
+    transform-style: preserve-3d; /* Permite girar en 3D */
+    transition: transform 0.8s;
+}
+
+.carta-container:hover .carta {
+    transform: rotateY(180deg); /* Gira la carta */
+}
+
+.cara {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Oculta la parte trasera */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+
+.frente { background-color: gold; }
+.atras { 
+    background-color: purple; 
+    color: white;
+    transform: rotateY(180deg); /* Ya está girada para esperar la vuelta */
+}
