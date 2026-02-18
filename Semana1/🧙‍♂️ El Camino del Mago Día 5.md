@@ -50,7 +50,7 @@ button:hover {
     transform: scale(1.1);      /* Crece un poco */
 }
 ```
-## Unidades de Medida: Más allá de los Píxeles
+## 3. Unidades de Medida: Más allá de los Píxeles
 
 En el diseño web moderno, usar solo px (píxeles) es un error, ya que son unidades fijas que no se adaptan bien.
 Existen dos tipos de unidades, absolutas y relativas.
@@ -79,7 +79,27 @@ Permiten añadir contenido estético sin ensuciar tu HTML. Se escriben con cuatr
 >[!INFO] Regla de Oro: 
 >Para que ::before o ::after funcionen, SIEMPRE debes poner la propiedad content: ''; (aunque esté vacía).
 
-## 4. Animaciones y Transiciones
+## 5. Variables CSS (Custom Properties)
+
+Las variables son fundamentales para la mantenibilidad. Imagina que el cliente quiere cambiar el color "Púrpura Mago" por uno "Azul Galaxia". Sin variables, tendrías que buscar y reemplazar en 50 lugares.
+
+Cómo se declaran: Se usa el selector :root (que representa a todo el documento).
+```CSS
+:root {
+    --color-primario: #6a1b9a;
+    --color-secundario: #ffd600;
+    --espaciado-base: 20px;
+}
+```
+Cómo se usan:
+```CSS
+.tarjeta {
+    background-color: var(--color-primario);
+    padding: var(--espaciado-base);
+    border: 2px solid var(--color-secundario);
+}
+```
+## 6. Animaciones y Transiciones
 
 Hagamos que las cosas se muevan.
 ### Transiciones (transition)
@@ -115,7 +135,33 @@ Es la forma compleja. Puedes controlar lo que pasa en cada momento (0%, 50%, 100
     animation: rebote 2s infinite; /* Se repite por siempre */
 }
 ```
-## 5. Buenas Prácticas de Diseño Visual
+## 7. Transformaciones (transform)
+
+La propiedad `transform` permite modificar la geometría de los elementos sin afectar el flujo del documento (es decir, no mueve a los elementos vecinos, solo cambia cómo se ve el elemento en sí).
+### A. Traslación (`translate`)
+Mueve un elemento de su posición original usando coordenadas X (horizontal) e Y (vertical).
+- `transform: translateX(50px);` (Mueve a la derecha).  
+- `transform: translateY(-20px);` (Sube).
+- `transform: translate(10px, 20px);` (Mueve en ambos ejes).
+
+>[!INFO] **Truco de Mago:** 
+>Es la mejor forma de centrar elementos de forma absoluta junto con `top: 50%; left: 50%; transform: translate(-50%, -50%);`.
+
+### B. Escala (`scale`)
+Cambia el tamaño del elemento.
+- `scale(2)`: Duplica el tamaño.
+- `scale(0.5)`: Lo reduce a la mitad.
+- `scaleX` o `scaleY`: Para estirar solo en una dirección.
+
+### C. Rotación (`rotate`)
+Gira el elemento los grados que le indiques.
+- `transform: rotate(45deg);` (Gira a favor del reloj).
+- `transform: rotate(-90deg);` (Gira en contra).
+### D. Inclinación (`skew`)
+Distorsiona el elemento dándole un ángulo de inclinación. Muy usado para diseños modernos y cortes diagonales.
+- `transform: skewX(20deg);`
+
+## 8. Buenas Prácticas de Diseño Visual
 
 No basta con que el código funcione, debe verse profesional.
 1. Paleta de Colores: No uses colores al azar. Usa la regla del 60-30-10 (60% color dominante, 30% secundario, 10% acento).
@@ -123,10 +169,29 @@ No basta con que el código funcione, debe verse profesional.
 3. Iconos: Usa librerías como FontAwesome o Google Icons para añadir símbolos visuales (lupas, casas, usuarios) en lugar de imágenes pesadas.
 4. Prototipado: Antes de escribir código, dibuja tu idea en papel o usa herramientas como Figma. Ahorrarás horas de correcciones.
 
-## 6. Ejercicio Final del Día 5: La Carta Holográfica 🃏
+## 11. Tipografía de Élite: Google Fonts
+
+No todas las computadoras tienen instaladas las mismas fuentes. Para que tu web se vea igual en todo el mundo, usamos Google Fonts, que sirve las fuentes desde la nube.
+Paso a Paso para Implementarlo:
+1. Selección: Vas a fonts.google.com, eliges una familia (ej. Montserrat o Poppins) y seleccionas los estilos (Regular 400, Bold 700).
+2. El Vínculo (HTML): Google te dará un código `<link>`. Este debe ir dentro del `<head>`, siempre antes de tu propio archivo de CSS.
+```HTML
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+```
+3. La Aplicación (CSS): Ahora usas el nombre de la fuente en tus reglas.
+```CSS
+
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+```
+### ¿Qué significa el sans-serif al final?
+Es una fuente de respaldo (fallback). Si por alguna razón internet falla y no carga Google Fonts, el navegador usará la fuente "sin serifa" (letras lisas) que tenga por defecto la computadora del usuario.
+
+## 10. Ejercicio Final del Día 5: La Carta Holográfica 🃏
 
 Vamos a crear una tarjeta que gire 3D al pasar el mouse.
-
 ### HTML:
 ```HTML
 
