@@ -138,7 +138,6 @@ node app.js
 ```
 
 ## Práctica de Consola
-
 ```JavaScript
 // 1. Declaramos variables
 const nombre = prompt("¿Cuál es tu nombre de mago?");
