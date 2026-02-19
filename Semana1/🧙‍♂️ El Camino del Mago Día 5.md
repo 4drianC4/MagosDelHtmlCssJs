@@ -25,6 +25,7 @@ Son los anchos estándar donde solemos cambiar el diseño:
     Móvil: Estilos por defecto (sin media query).
     Tablet: min-width: 768px
     Desktop: min-width: 1024px
+    
 >[!INFO] Filosofía "Mobile First": 
 >Diseña primero para lo más difícil (la pantalla pequeña del celular) y luego expande el diseño para pantallas grandes. Es más fácil escalar hacia arriba que intentar meter un elefante en una caja de zapatos.
 
@@ -54,7 +55,6 @@ button:hover {
 
 En el diseño web moderno, usar solo px (píxeles) es un error, ya que son unidades fijas que no se adaptan bien.
 Existen dos tipos de unidades, absolutas y relativas.
-
 ### Unidades Absolutas
 en general se considera que siempre tienen el mismo tamaño y la mayoría de estos valores son más útiles cuando se usan en una salida en formato impreso que en la salida de pantalla.
 
