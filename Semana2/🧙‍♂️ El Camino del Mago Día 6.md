@@ -136,10 +136,10 @@ Ahora no necesitas el navegador para ver tus resultados.
 ```Bash
 node app.js
 ```
-Práctica de Consola
 
-JavaScript
+## Práctica de Consola
 
+```JavaScript
 // 1. Declaramos variables
 const nombre = prompt("¿Cuál es tu nombre de mago?");
 let mana = 100;
@@ -155,3 +155,4 @@ console.log("Tu maná actual es de: " + mana);
 // 4. Comparación lógica
 const puedeLanzarOtro = mana >= costoHechizo;
 console.log("¿Puedes lanzar otro hechizo? " + puedeLanzarOtro);
+```
