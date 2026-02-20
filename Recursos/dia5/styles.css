@@ -843,10 +843,6 @@ body {
     }
     
     .contenedor-demos {
-
-body {
-    font-family: var(--fuente-principal);
- 
         flex-direction: column;
         align-items: center;
     }
