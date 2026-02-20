@@ -738,6 +738,55 @@ body {
    MEDIA QUERIES (RESPONSIVE DESIGN)
    ======================================== */
 
+@media screen and (max-width: 768px) {
+    /* Mostrar el botón hamburguesa */
+    .menu-hamburguesa {
+        display: flex;
+    }
+    
+    /* Ocultar navegación por defecto */
+    .navegacion {
+        position: fixed;
+        top: 70px; /* Ajusta según la altura de tu header */
+        right: -100%;
+        width: 280px;
+        height: calc(100vh - 70px);
+        background-color: rgba(28, 28, 51, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: var(--espaciado-lg);
+        gap: 0;
+        transition: right 0.4s ease;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+    }
+    
+    /* Mostrar menú cuando está activo */
+    .navegacion.activo {
+        right: 0;
+    }
+    
+    /* Estilos de los enlaces en móvil */
+    .navegacion a {
+        width: 100%;
+        padding: var(--espaciado-md);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 0;
+    }
+    
+    .navegacion a:hover {
+        background-color: var(--color-primario);
+        transform: translateX(5px);
+        padding-left: calc(var(--espaciado-md) + 5px);
+    }
+    
+    /* Ajustar después del subrayado en móvil */
+    .navegacion a::after {
+        display: none;
+    }
+}
+
 /* Tablet (768px - 1023px) */
 @media (min-width: 768px) {
     .titulo-principal {
