@@ -14,7 +14,15 @@
     <!-- HEADER CON FLEXBOX -->
     <header class="header-principal">
         <div class="logo">🧙‍♂️ Academia de Magos</div>
-        <nav class="navegacion">
+        
+        <!-- Botón hamburguesa -->
+        <button class="menu-hamburguesa" id="menuToggle" aria-label="Menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <nav class="navegacion" id="navMenu">
             <a href="#misiones">Misiones</a>
             <a href="#cartas">Cartas</a>
             <a href="#galeria">Galería</a>
@@ -216,5 +224,25 @@
 
     <!-- Elemento flotante animado -->
     <div class="elemento-flotante">✨</div>
+
+    <!-- Script para el menú hamburguesa -->
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('activo');
+            menuToggle.classList.toggle('activo');
+        });
+        
+        // Cerrar menú al hacer click en un enlace
+        const navLinks = document.querySelectorAll('.navegacion a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('activo');
+                menuToggle.classList.remove('activo');
+            });
+        });
+    </script>
 </body>
 </html>
