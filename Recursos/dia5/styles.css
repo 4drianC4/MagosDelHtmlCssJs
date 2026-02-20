@@ -48,7 +48,7 @@ body {
    HEADER CON FLEXBOX
    ======================================== */
 .header-principal {
-    background-color: rgba(26, 26, 46, 0.9);
+    background-color: rgba(28, 28, 51, 0.9);
     backdrop-filter: blur(10px);
     padding: var(--espaciado-md) var(--espaciado-lg);
     display: flex;
