@@ -32,11 +32,11 @@ Creamos un archivo .js y lo llamamos.
 
 Para guardar información, usamos variables. En JavaScript moderno tenemos tres formas de declarar "contenedores":
 
-|**Declaración**|**¿Se puede cambiar?**|**¿Es moderna?**|**Recomendación**|
-|---|---|---|---|
-|**`const`**|**No** (Es constante)|Sí|Úsala por defecto para todo.|
-|**`let`**|**Sí**|Sí|Úsala solo si sabes que el valor va a cambiar.|
-|**`var`**|Sí|No|**Evítala**. Es la forma antigua y puede causar "errores fantasma" (problemas de scope).|
+| **Declaración** | **¿Se puede cambiar?** | **¿Es moderna?** | **Recomendación**                                                                        |
+| --------------- | ---------------------- | ---------------- | ---------------------------------------------------------------------------------------- |
+| **`const`**     | **No** (Es constante)  | Sí               | Úsala por defecto para todo.                                                             |
+| **`let`**       | **Sí**                 | Sí               | Úsala solo si sabes que el valor va a cambiar.                                           |
+| **`var`**       | Sí                     | No               | **Evítala**. Es la forma antigua y puede causar "errores fantasma" (problemas de scope). |
 
 Ejemplo:
 ```JavaScript
