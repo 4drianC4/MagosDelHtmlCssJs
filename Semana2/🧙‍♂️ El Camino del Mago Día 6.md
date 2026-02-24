@@ -79,7 +79,7 @@ Devuelven un booleano (true/false).
 - || (OR): Verdadero si al menos uno es cierto.
 - ! (NOT): Invierte el valor (lo que es true pasa a false).
 
-### 6. Primeras Herramientas de Diagnóstico
+## 6. Primeras Herramientas de Diagnóstico
 
 Como magos aprendices, necesitamos ver qué está pasando "detrás de cámaras".
 - console.log(): Muestra un mensaje en la consola del navegador (F12). Es nuestra herramienta principal de depuración.
