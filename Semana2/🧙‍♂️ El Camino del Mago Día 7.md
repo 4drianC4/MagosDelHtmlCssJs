@@ -63,6 +63,7 @@ for (let i = 1; i <= 5; i++) {
 
 ### B. Bucle while (Mientras tanto...)
 Se usa cuando no sabes cuántas veces se repetirá, solo que debe seguir mientras la condición sea cierta.
+
 ```JavaScript
 
 let energia = 3;
@@ -74,7 +75,9 @@ while (energia > 0) {
 
 ## 3. Funciones: Encantamientos Reutilizables
 
-Una función es un bloque de código que "empaquetamos" con un nombre para usarlo cuando queramos.
+Una función es un bloque de código que "empaquetamos" con un nombre para usarlo cuando queramwhile (energia > 0) {
+    console.log("Sigo luchando...");
+    eos.
 ### A. Declaración y Parámetros
 Los parámetros son las variables que la función recibe para trabajar. Los argumentos son los valores reales que le pasas al llamarla.
 ```JavaScript
