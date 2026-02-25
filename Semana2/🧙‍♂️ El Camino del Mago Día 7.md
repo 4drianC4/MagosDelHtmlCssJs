@@ -12,6 +12,8 @@ if (nivelMagia > 20) {
     console.log("Puedes invocar un Dragón.");
 } else if (nivelMagia >= 10) {
     console.log("Puedes invocar un Lobo.");
+} else if (nivelMagia >= 5) {
+    console.log("Puedes invocar un Lobo.");
 } else {
     console.log("Solo puedes invocar una Chispa.");
 }
@@ -21,6 +23,7 @@ if (nivelMagia > 20) {
 Si solo tienes dos opciones (blanco o negro), puedes usar esta sintaxis simplificada:
 condición ? expresión_si_true : expresión_si_false;
 ```JavaScript
+
 let esMago = true;
 let mensaje = esMago ? "¡Bienvenido al Gremio!" : "No se admiten muggles.";
 ```
