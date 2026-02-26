@@ -7,7 +7,7 @@ Un arreglo es una lista ordenada de datos. Imagina una mochila con compartimento
 - Declaración:
     ```JavaScript
     const inventario = ["Poción", 1, false];
-    const inventario2 = [...inventario]
+    const inventario2 = [...inventario, 1, 's', 'a']
 	```
 ### Operaciones Esenciales (Métodos)
 
