@@ -66,6 +66,12 @@ Este es el concepto más avanzado de hoy:
 >[!WARNING] El peligro: 
 >Si haces let mago2 = mago;, no estás creando un mago nuevo, estás creando un "espejo". Si cambias la edad en mago2, ¡también cambiará en mago!
 
+>[!IMPORTANT] Para copiar un objeto o lista dentro de otro...
+>podemos usar spread operator `...` esto hará que todos los datos dentro se copien en el nuevo objeto
+>const original = [1,2,3,4]
+>const copia = [...original, 1, 2, 3]
+>const obj = {a: 1, b: 2, c: 3}
+>const obj2 = {...obj, d: 4, c: 5}
 ## 4. Combinando Poderes: Arreglos de Objetos
 
 En la vida real, los datos se ven así: una lista de objetos.

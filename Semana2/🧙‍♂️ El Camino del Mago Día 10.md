@@ -74,7 +74,7 @@ formulario.addEventListener('submit', (evento) => {
 | **`mouseover`**    | Al pasar el puntero del mouse sobre un elemento.           | Mostrar información extra (tooltips) al pasar por encima de una imagen. |
 | **`keydown`**      | Al presionar cualquier tecla.                              | Mover personajes en un juego web, atajos de teclado.                    |
 
-## 6. Reto del Día 11: "El Espejo Parlante"
+## 6. Reto del Día 10: "El Espejo Parlante"
 
 Para asentar los conocimientos, construyan este pequeño script interactivo:
 1. Crea un archivo HTML con un `<input type="text">` y un párrafo `<p id="espejo">`.
