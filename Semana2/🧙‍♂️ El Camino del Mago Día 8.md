@@ -10,13 +10,13 @@ Un arreglo es una lista ordenada de datos. Imagina una mochila con compartimento
 	```
 ### Operaciones Esenciales (Métodos)
 
-|**Método**|**Acción**|**Resultado en ["A", "B"]**|
-|---|---|---|
-|`.push("C")`|Agrega al **final**.|`["A", "B", "C"]`|
-|`.pop()`|Quita el **último**.|`["A"]`|
-|`.unshift("Z")`|Agrega al **inicio**.|`["Z", "A", "B"]`|
-|`.shift()`|Quita el **primero**.|`["B"]`|
-|`.length`|Te dice cuántos hay.|`2`|
+| **Método**      | **Acción**            | **Resultado en ["A", "B"]** |
+| --------------- | --------------------- | --------------------------- |
+| `.push("C")`    | Agrega al **final**.  | `["A", "B", "C"]`           |
+| `.pop()`        | Quita el **último**.  | `["A"]`                     |
+| `.unshift("Z")` | Agrega al **inicio**. | `["Z", "A", "B"]`           |
+| `.shift()`      | Quita el **primero**. | `["B"]`                     |
+| `.length`       | Te dice cuántos hay.  | `2`                         |
 
 ### Información Importante: Arreglos y const
 
