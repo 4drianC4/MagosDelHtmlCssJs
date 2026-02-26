@@ -102,7 +102,7 @@ if (regexLetras.test(nombreIngresado)) {
     console.log("¡Error! Solo se permiten letras.");
 }
 ```
-### Diccionario de Runas (Patrones útiles de tu PDF):
+### Diccionario de Runas (Patrones útiles):
 
 1. Solo números: /^\d+$/
 2. Solo letras (sin espacios): /^[a-zA-Z]+$/
@@ -111,5 +111,5 @@ if (regexLetras.test(nombreIngresado)) {
 5. Contraseña segura (Mínimo 8 caracteres, al menos una letra y un número):
     /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
 
-## 5. Reto del Día 10: "El Botón de Luz"
+## 5. Reto del Día 9: "El Botón de Luz"
 Creen un botón en HTML y un cuadrado `<div>`. Al hacer clic en el botón, el fondo del cuadrado debe cambiar de negro a amarillo, simulando el hechizo Lumos. ¡Esto aplicará selección, eventos y modificación de estilos!
