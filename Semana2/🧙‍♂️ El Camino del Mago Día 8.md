@@ -6,7 +6,7 @@ Un arreglo es una lista ordenada de datos. Imagina una mochila con compartimento
 - Índices: En programación, empezamos a contar desde 0. El primer elemento está en la posición 0, el segundo en la 1, etc.
 - Declaración:
     ```JavaScript
-    const inventario = ["Poción", "Capa", "Varita"];
+    const inventario = ["Poción", 1, false];
 	```
 ### Operaciones Esenciales (Métodos)
 
