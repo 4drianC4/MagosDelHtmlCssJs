@@ -79,7 +79,7 @@ boton.addEventListener("click", function() {
     alert("¡Hechizo lanzado!");
 });
 ```
-### Respondiendo a la pregunta del PDF: ¿Cómo usar Funciones Flecha aquí?
+### ¿Cómo usar Funciones Flecha aquí?
 ¡Es muy sencillo y el código queda mucho más limpio!
 ```JavaScript
 boton.addEventListener("click", () => {
