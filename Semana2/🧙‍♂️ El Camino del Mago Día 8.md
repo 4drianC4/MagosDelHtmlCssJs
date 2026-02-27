@@ -70,9 +70,9 @@ Este es el concepto más avanzado de hoy:
 >[!IMPORTANT] Para copiar un objeto o lista dentro de otro...
 >podemos usar spread operator `...` esto hará que todos los datos dentro se copien en el nuevo objeto
 >const original = [1,2,3,4]
->const copia = [...original, 1, 2, 3]
+>const copia = [...original, 5, 6, 7]
 >const obj = {a: 1, b: 2, c: 3}
->const obj2 = {...obj, d: 4, c: 5}
+>const obj2 = {...obj, d: 4, f: 5}
 ## 4. Combinando Poderes: Arreglos de Objetos
 
 En la vida real, los datos se ven así: una lista de objetos.
@@ -80,7 +80,7 @@ En la vida real, los datos se ven así: una lista de objetos.
 const gremio = [
     { nombre: "Gandalf", rango: "Gris" },
     { nombre: "Saruman", rango: "Blanco" },
-    { nombre: "Radagast", rango: "Pardo" }
+    { nombre: "Radagast", rango: "Pardo", poder: 17 }
 ];
 
 // Acceder al rango del segundo mago:
