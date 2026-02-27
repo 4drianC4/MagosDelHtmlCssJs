@@ -51,7 +51,6 @@ Te indica exactamente qué elemento HTML disparó el evento. Es vital para leer 
 
 Algunos elementos HTML tienen un comportamiento "por defecto" bastante terco.
 Por ejemplo, la etiqueta `<form>` intentará enviar los datos a un servidor y recargar la página entera inmediatamente después de hacer clic en enviar. ¡Eso interrumpe nuestra magia en JavaScript!
-
 Para detener este comportamiento predeterminado, usamos el método preventDefault().
 ```JavaScript
 const formulario = document.querySelector('#formulario-registro');
