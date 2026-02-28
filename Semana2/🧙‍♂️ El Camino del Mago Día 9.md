@@ -110,6 +110,6 @@ if (regexLetras.test(nombreIngresado)) {
 4. Email válido: /^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/
 5. Contraseña segura (Mínimo 8 caracteres, al menos una letra y un número):
     /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
-
+6. Solo letras y ñ: /^[a-zA-ZñÑ]+$/
 ## 5. Reto del Día 9: "El Botón de Luz"
 Creen un botón en HTML y un cuadrado `<div>`. Al hacer clic en el botón, el fondo del cuadrado debe cambiar de negro a amarillo, simulando el hechizo Lumos. ¡Esto aplicará selección, eventos y modificación de estilos!

@@ -20,7 +20,7 @@ Le decimos al navegador: "Presta atención a este elemento. Cuando ocurra X cosa
 ### Ejemplo Práctico:
 ```JavaScript
 // 1. Seleccionamos el elemento (Nuestra varita)
-const boton = document.querySelector('#miboton');
+const boton = document.getElementById("miboton");
 
 // 2. Le añadimos el sentido del "tacto" (click)
 boton.addEventListener('click', () => {
