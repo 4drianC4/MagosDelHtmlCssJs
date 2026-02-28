@@ -4,7 +4,7 @@
 Imagina que has creado un muñeco de arcilla (HTML) y le has puesto ropa (CSS). Los Eventos son los sentidos que le das a ese muñeco para que sepa cuándo alguien lo toca, le habla o le entrega un objeto.
 
 Los eventos son acciones o sucesos que ocurren en el navegador. JavaScript puede quedarse "escuchando" estos sucesos para ejecutar una función cuando ocurran.
-### Ejemplos de la vida realz en la web:
+### Ejemplos de la vida real en la web:
 - El usuario hace clic en un botón de "Comprar poción".
 - El usuario escribe su nombre en un campo de texto.
 - El usuario arrastra una imagen.
