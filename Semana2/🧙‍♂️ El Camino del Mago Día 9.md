@@ -93,7 +93,7 @@ Cuando le pides datos al usuario (en un formulario), no siempre escribirán lo c
 ### ¿Cómo se usan en JS? Usando el método .test(), que devuelve true o false.
 ```JavaScript
 // La runa (patrón) para solo letras
-const regexLetras = /^[a-zA-Z\s]+$/; 
+const regexLetras = /^[Aa-z-Z\s]+$/; 
 let nombreIngresado = "Gandalf el Blanco";
 
 if (regexLetras.test(nombreIngresado)) {
