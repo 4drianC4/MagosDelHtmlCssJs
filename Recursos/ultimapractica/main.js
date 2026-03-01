@@ -1,7 +1,7 @@
 const formulario = document.querySelector("#formulario");
 const input1 = document.getElementById("input1");
 const listaTareas = document.getElementById("lista-tareas");
-const mesajeError = document.getElementById("mensaje-error");
+const mesajeError = document.getElementById("error-message");
 
 function validarTexto(texto) {
     if (texto.trim() === "") {
@@ -72,10 +72,9 @@ formulario.addEventListener('submit', (e) => {
     const texto = input1.value;
     const validacion = validarTexto(texto);
 
-    console.log(validacion);
     if (!validacion.valido) {
         mostrarMensaje(validacion.mensaje);
-        alert(validacion.mensaje);
+        console.log(validacion.mensaje);
         return;
     }
     input1.value = "";
