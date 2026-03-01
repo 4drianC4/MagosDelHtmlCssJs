@@ -1,4 +1,5 @@
 const formulario = document.getElementById("formulario");
+const input1 = document.getElementById("input1");
 
 function validarTexto(texto) {
     if (texto.trim() === "") {
@@ -31,6 +32,8 @@ function validarTexto(texto) {
 function mostrarMensaje(mensaje) {
     mesajeError.textContent = mensaje;
 
+    mesajeError.style.display = "block";
+
     setTimeout(() => {
         mesajeError.style.opacity = "0";
         setTimeout(() => {
@@ -40,4 +43,16 @@ function mostrarMensaje(mensaje) {
     }, 5000);
 }
 
-formulario.
+formulario.addEventListener('submit', (e) => {
+     e.preventDefault();
+    const texto = input1.value;
+    const validacion = validarTexto(texto);
+    
+    if (!validacion.valido) {
+        mostrarMensaje(validacion.mensaje);
+        alert(validacion.mensaje);
+        return;
+    }
+    input1.value = "";
+
+});
