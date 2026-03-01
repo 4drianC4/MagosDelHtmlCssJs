@@ -1,4 +1,4 @@
-const formulario = document.getElementById("formulario");
+const formulario = document.querySelector("#formulario");
 const input1 = document.getElementById("input1");
 const listaTareas = document.getElementById("lista-tareas");
 const mesajeError = document.getElementById("mensaje-error");
@@ -68,11 +68,11 @@ function agregarTexto(texto) {
 }
 
 formulario.addEventListener('submit', (e) => {
-     e.preventDefault();
+    e.preventDefault();
     const texto = input1.value;
     const validacion = validarTexto(texto);
 
-    console.log(texto);
+    console.log(validacion);
     if (!validacion.valido) {
         mostrarMensaje(validacion.mensaje);
         alert(validacion.mensaje);
