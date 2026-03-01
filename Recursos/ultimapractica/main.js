@@ -1,5 +1,7 @@
 const formulario = document.getElementById("formulario");
 const input1 = document.getElementById("input1");
+const listaTareas = document.getElementById("lista-tareas");
+const mesajeError = document.getElementById("mensaje-error");
 
 function validarTexto(texto) {
     if (texto.trim() === "") {
@@ -33,6 +35,9 @@ function mostrarMensaje(mensaje) {
     mesajeError.textContent = mensaje;
 
     mesajeError.style.display = "block";
+    mesajeError.style.opacity = "1";
+
+    input1.classList.add("error");
 
     setTimeout(() => {
         mesajeError.style.opacity = "0";
@@ -43,16 +48,37 @@ function mostrarMensaje(mensaje) {
     }, 5000);
 }
 
+function agregarTexto(texto) {
+    const li = document.createElement("li");
+    const spanTexto = document.createElement("span");
+    const botonEliminar = document.createElement("button");
+
+    spanTexto.textContent = texto;
+    botonEliminar.textContent = "Eliminar";
+    
+    li.setAttribute("data-id", Date.now());
+
+    li.appendChild(spanTexto);
+    li.appendChild(botonEliminar);
+    listaTareas.appendChild(li);
+
+    botonEliminar.addEventListener("click", () => {
+        listaTareas.removeChild(li);
+    });
+}
+
 formulario.addEventListener('submit', (e) => {
      e.preventDefault();
     const texto = input1.value;
     const validacion = validarTexto(texto);
-    
+
+    console.log(texto);
     if (!validacion.valido) {
         mostrarMensaje(validacion.mensaje);
         alert(validacion.mensaje);
         return;
     }
     input1.value = "";
+    agregarTexto(texto);
 
 });
