@@ -1,115 +1,276 @@
-# Manipulación del DOM: Alterando la Realidad
-## 1. ¿Qué es el DOM? (El Árbol Mágico)
+# Estructuras de Datos: Arreglos y Objetos
 
-El DOM (Document Object Model) no es parte del lenguaje JavaScript en sí, sino una interfaz que el navegador crea cuando lee tu HTML.
+## 1. Arreglos (Arrays): La Mochila de Inventario 🎒
 
-El navegador convierte todas tus etiquetas HTML en un "árbol de objetos" en la memoria. Imagina que cada etiqueta (`<h1>, <p>, <div>`) es una criatura mágica viva con la que JavaScript puede hablar, leer y transformar usando hechizos (funciones).
-## 2. Seleccionar Elementos: Apuntando con la Varita
+Un arreglo es una **lista ordenada** de datos. Imagina una mochila con compartimentos numerados. Podemos meter cualquier tipo de dato: strings, números, booleanos, ¡incluso otros arreglos u objetos (los verás en este mismo día)!
 
-Para modificar algo en la página, primero debes encontrarlo. JavaScript tiene varios "radares" para esto:
-### A. Por ID (getElementById)
-Ideal para seleccionar un elemento único que tiene un atributo id.
 ```JavaScript
-let titulo = document.getElementById("titulo-principal");
+const inventario = ["Poción", "Varita", "Pergamino"];
+const mezclado = ["Poción", 1, true];  // Incluso mezclando tipos (raro pero posible)
 ```
-### B. El Selector Universal (querySelector / querySelectorAll)
-Es la forma más moderna y versátil. Usa exactamente la misma sintaxis que CSS para encontrar elementos.
-```JavaScript
-// Selecciona el PRIMER elemento con la clase "btn"
-let boton = document.querySelector(".btn");
 
-// Selecciona TODOS los <li> (Devuelve una lista/NodeList)
-let todosLosItems = document.querySelectorAll("li");
+### Índices: Empezamos a contar desde 0
+
+El primer elemento está en la posición **0**, el segundo en la **1**, etc.
+
+```JavaScript
+const inventario = ["Poción", "Varita", "Pergamino"];
+
+console.log(inventario[0]); // "Poción"  (el PRIMERO)
+console.log(inventario[1]); // "Varita"
+console.log(inventario[2]); // "Pergamino"  (el último)
+console.log(inventario.length); // 3 (cuántos hay)
 ```
-## 3. Modificando el Contenido: Hechizos de Transformación
 
-Una vez que tienes el elemento capturado en una variable, puedes cambiar lo que dice o cómo se ve.
-### Cambiar Texto (textContent vs innerHTML)
-- textContent: Cambia solo el texto. Es seguro y rápido.
-    ```JavaScript
-	titulo.textContent = "¡Bienvenido, aprendiz Supremo!";
-	```
-- innerHTML: Cambia el HTML interno. Permite inyectar nuevas etiquetas, pero cuidado: si inyectas texto escrito por un usuario, podrías sufrir ataques de seguridad (XSS).
-	```JavaScript
+> [!WARNING] Índice vs Length
+> Si el arreglo tiene 3 elementos, el **último índice** es 2 (empezamos en 0), pero `inventario.length` es 3. Es fácil confundirse: el último índice siempre es `length - 1`.
 
-	titulo.innerHTML = "¡Bienvenido, <em>aprendiz</em>!";
-	```
-### Cambiar Estilos (style)
+### Operaciones Esenciales (Métodos)
 
-Puedes cambiar el CSS directamente desde JavaScript. Las propiedades que en CSS tienen guion (como background-color), en JS se escriben en camelCase (backgroundColor).
+| **Método**      | **Acción**            | **Resultado en ["A", "B"]** |
+| --------------- | --------------------- | --------------------------- |
+| `.push("C")`    | Agrega al **final**.  | `["A", "B", "C"]`           |
+| `.pop()`        | Quita el **último**.  | `["A"]`                     |
+| `.unshift("Z")` | Agrega al **inicio**. | `["Z", "A", "B"]`           |
+| `.shift()`      | Quita el **primero**. | `["B"]`                     |
+| `.length`       | Te dice cuántos hay.  | `2`                         |
+
 ```JavaScript
-titulo.style.color = "purple";
-titulo.style.backgroundColor = "gold";
+const mochila = [];
+
+mochila.push("Poción");       // ["Poción"]
+mochila.push("Varita");       // ["Poción", "Varita"]
+mochila.unshift("Mapa");      // ["Mapa", "Poción", "Varita"]
+mochila.pop();                // Elimina "Varita" → ["Mapa", "Poción"]
+mochila.shift();              // Elimina "Mapa" → ["Poción"]
+
+console.log(mochila);         // ["Poción"]
 ```
-## 4. Creación y Destrucción: Invocación y Desaparición
 
-No estás limitado a lo que ya existe en el HTML; puedes crear cosas de la nada.
-### A. Crear e Inyectar (createElement y appendChild)
+### Información Importante: Arreglos y `const`
 
-1. Creas el elemento en el "limbo" (memoria).
-2. Le das contenido.
-3. Lo pegas en la página.
+Muchos se preguntan: "Si declaré mi arreglo con `const`, ¿por qué puedo usar `.push()` para cambiarlo?".
+
+La explicación: `const` protege el **nombre** de la variable. No puedes reasignar la mochila entera (`inventario = ["otra cosa"]`), pero sí puedes **cambiar lo que hay dentro** de ella. A esto se le llama **mutabilidad**.
 
 ```JavaScript
-// 1. Invocamos un nuevo elemento <li>
-let nuevoItem = document.createElement("li");
+const inventario = ["Poción"];
 
-// 2. Le damos poder (texto)
-nuevoItem.textContent = "Poción de Velocidad";
+inventario.push("Varita");       // ✅ Válido: modificamos el contenido
+inventario[0] = "Poción de lujo"; // ✅ Válido: cambiamos un elemento
 
-// 3. Lo añadimos al final de una lista <ul> existente
-document.querySelector("ul").appendChild(nuevoItem);
+// inventario = ["otro"];          // ❌ ERROR: no se puede reasignar un const
 ```
-### B. Eliminar (remove)
 
-Si un elemento ya no es útil, bórralo de la existencia.
+## 2. Recorriendo la Mochila (Iteración)
+
+Para hacer algo con **cada elemento** de la lista, usamos bucles.
+
+### A. `for...of` (El más legible)
+
 ```JavaScript
-let maldicion = document.querySelector(".elemento-maldito");
-maldicion.remove();
-```
-## 5. Eventos: ¡Activando la Magia!
+const inventario = ["Poción", "Varita", "Pergamino"];
 
-Un evento es cualquier cosa que sucede en la página (un clic, mover el mouse, presionar una tecla). Usamos addEventListener para decirle a JS: "Quédate escuchando, y cuando pase ESTO, ejecuta ESTA función".
-
-### Sintaxis Clásica:
-```JavaScript
-let boton = document.getElementById("activar-hechizo");
-
-boton.addEventListener("click", function() {
-    alert("¡Hechizo lanzado!");
-});
-```
-### ¿Cómo usar Funciones Flecha aquí?
-¡Es muy sencillo y el código queda mucho más limpio!
-```JavaScript
-boton.addEventListener("click", () => {
-    alert("¡Hechizo lanzado con función flecha!");
-});
-```
-## 6. Validaciones: Runas de Protección (RegEx)
-
-Cuando le pides datos al usuario (en un formulario), no siempre escribirán lo correcto. Para verificar que un texto tiene el formato adecuado, usamos Expresiones Regulares (RegEx), que son patrones de búsqueda.
-
-### ¿Cómo se usan en JS? Usando el método .test(), que devuelve true o false.
-```JavaScript
-// La runa (patrón) para solo letras
-const regexLetras = /^[Aa-z-Z\s]+$/; 
-let nombreIngresado = "Gandalf el Blanco";
-
-if (regexLetras.test(nombreIngresado)) {
-    console.log("Nombre válido, puedes pasar.");
-} else {
-    console.log("¡Error! Solo se permiten letras.");
+for (let item of inventario) {
+    console.log(`Tienes un: ${item}`);
 }
 ```
-### Diccionario de Runas (Patrones útiles):
 
-1. Solo números: /^\d+$/
-2. Solo letras (sin espacios): /^[a-zA-Z]+$/
-3. Letras y espacios: /^[a-zA-Z\s]+$/
-4. Email válido: /^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/
-5. Contraseña segura (Mínimo 8 caracteres, al menos una letra y un número):
-    /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
-6. Solo letras y ñ: /^[a-zA-ZñÑ]+$/
-## 5. Reto del Día 9: "El Botón de Luz"
-Creen un botón en HTML y un cuadrado `<div>`. Al hacer clic en el botón, el fondo del cuadrado debe cambiar de negro a amarillo, simulando el hechizo Lumos. ¡Esto aplicará selección, eventos y modificación de estilos!
+### B. `.forEach()` (El moderno)
+
+Recibe una función que se ejecuta por cada elemento. El método te da el elemento y (opcionalmente) su índice.
+
+```JavaScript
+inventario.forEach((item, indice) => {
+    console.log(`${indice}: ${item}`);
+});
+// Resultado:
+// 0: Poción
+// 1: Varita
+// 2: Pergamino
+```
+
+> [!INFO] ¿Cuándo usar cada forma?
+> Usa `for...of` cuando solo necesites el elemento. Usa `.forEach()` cuando quieras también el índice o prefieras el estilo funcional. Ambas son válidas.
+
+## 3. Objetos: El Grimorio Personal 📖
+
+Mientras que el Arreglo es una **lista numerada**, el Objeto es una colección de datos donde **cada valor tiene un nombre (clave)**.
+
+```JavaScript
+const mago = {
+    nombre: "Merlín",
+    edad: 150,
+    estaVivo: true,
+    hechizos: ["Fuego", "Hielo"],        // Un objeto puede contener un arreglo
+    lanzarHechizo: function() {           // Esto es un MÉTODO (función dentro de un objeto)
+        console.log("¡EXPELIARMUS!");
+    }
+};
+```
+
+### Accediendo a la información
+
+1. **Punto (`.`)**: `mago.nombre` — El más común.
+2. **Corchetes (`[]`)**: `mago["edad"]` — Útil si la clave está en otra variable.
+
+```JavaScript
+console.log(mago.nombre);        // "Merlín"
+console.log(mago["edad"]);       // 150
+
+const propiedad = "nombre";
+console.log(mago[propiedad]);    // "Merlín" (se usa con variable)
+```
+
+### Modificando y agregando propiedades
+
+```JavaScript
+mago.edad = 151;                    // Cambiar un valor existente
+mago.casa = "Gryffindor";           // Agregar una nueva propiedad
+delete mago.casa;                   // Eliminar una propiedad
+
+mago.lanzarHechizo();               // Llamar el método
+```
+
+### Objetos con métodos más elegantes
+
+```JavaScript
+const criatura = {
+    nombre: "Dragón",
+    nivelPoder: 85,
+    presentarse() {                  // Sintaxis moderna de método
+        console.log(`Soy ${this.nombre}, una criatura de nivel ${this.nivelPoder}`);
+    }
+};
+```
+
+> [!INFO] ¿Qué es `this`?
+> Dentro de un método, `this` se refiere al propio objeto. Así `this.nombre` lee la propiedad `nombre` del objeto. No te preocupes por dominarlo hoy, solo conoce que existe.
+
+### Objetos anidados
+
+Un objeto puede contener otros objetos, formando estructuras más complejas:
+
+```JavaScript
+const jugador = {
+    nombre: "Aprendiz",
+    stats: {
+        vida: 100,
+        mana: 50,
+        fuerza: 12
+    },
+    equipo: {
+        arma: "Varita de Saúco",
+        armadura: "Túnica de Aprendiz"
+    }
+};
+
+console.log(jugador.stats.mana);       // 50
+console.log(jugador.equipo.arma);      // "Varita de Saúco"
+```
+
+## 4. Valores vs Referencias (Concepto Clave)
+
+Este es uno de los conceptos más importantes y confusos de JavaScript:
+
+- Los **datos simples** (números, strings, booleanos) se copian **por valor**.
+- Los **arreglos y objetos** se guardan **por referencia** (dirección de memoria).
+
+```JavaScript
+// POR VALOR (tipos simples)
+let a = 5;
+let b = a;   // COPIA el valor
+b = 10;
+console.log(a); // 5 (a no cambió, es una copia independiente)
+
+// POR REFERENCIA (arreglos y objetos)
+const original = { nombre: "Merlín" };
+const espejo = original;   // NO copia, apunta a la MISMA referencia
+espejo.nombre = "Saruman";
+console.log(original.nombre); // "Saruman" — ¡EL ORIGINAL CAMBIÓ!
+```
+
+> [!WARNING] El peligro del espejo
+> Si haces `const mago2 = mago;`, no estás creando un mago nuevo; estás creando un "espejo" que apunta al mismo lugar en memoria. Si cambias un valor en `mago2`, también cambiará en `mago`.
+
+### La solución: Spread Operator (`...`)
+
+Para **copiar** un objeto o arreglo en uno nuevo, usamos el spread operator (`...`). Es como abrir la caja y vaciar todo su contenido en una caja nueva:
+
+```JavaScript
+const original = [1, 2, 3, 4];
+const copia = [...original, 5, 6, 7];   // Copia los elementos y agrega más
+// copia = [1, 2, 3, 4, 5, 6, 7]
+
+copia[0] = 99;
+console.log(original[0]);  // 1 — ¡EL ORIGINAL NO CAMBIÓ! ✅
+
+// Lo mismo con objetos
+const obj = { a: 1, b: 2, c: 3 };
+const obj2 = { ...obj, d: 4 };   // Copia a, b, c y agrega d
+// obj2 = { a: 1, b: 2, c: 3, d: 4 }
+```
+
+> [!TIP] ¿Cuándo usar el spread?
+> Siempre que quieras crear una **copia independiente** de un arreglo u objeto para modificarla sin afectar el original. Es increíblemente común en proyectos reales.
+
+## 5. Combinando Poderes: Arreglos de Objetos
+
+En la vida real, los datos casi nunca son solo una lista o solo un objeto. **La combinación** más común es una "lista de objetos": por ejemplo, tus proyectos del portafolio, tus redes sociales, los productos de una tienda.
+
+```JavaScript
+const gremio = [
+    { nombre: "Gandalf", rango: "Gris", poder: 85 },
+    { nombre: "Saruman", rango: "Blanco", poder: 92 },
+    { nombre: "Radagast", rango: "Pardo", poder: 64 }
+];
+
+// Acceder al rango del segundo mago (índice 1):
+console.log(gremio[1].rango);   // "Blanco"
+
+// Recorrer todos con for...of:
+for (let mago of gremio) {
+    console.log(`${mago.nombre} es de rango ${mago.rango}`);
+}
+```
+
+### La analogía del inventario de una tienda
+
+```JavaScript
+// Es EXACTAMENTE así como se ven los datos en las APIs y bases de datos
+const productos = [
+    { nombre: "Poción de Vuelo", precio: 150, stock: 5 },
+    { nombre: "Varita de Roble", precio: 300, stock: 2 },
+    { nombre: "Capa de Invisibilidad", precio: 999, stock: 1 }
+];
+
+for (let producto of productos) {
+    console.log(`${producto.nombre} — $${producto.precio}`);
+}
+```
+
+## 📝 Reto del Día: "El Gestor de Inventario"
+
+Pon a prueba lo aprendido. Crea un script que:
+
+1. Tenga un arreglo de objetos llamado `armas`.
+2. Cada objeto debe tener `nombre` y `poder`.
+3. Usa un bucle para mostrar **solo** las armas que tengan un `poder > 50`.
+
+Luego, revisa la práctica **"Práctica 8. La Ciudad de los Arreglos"** en la carpeta de prácticas y complétala para afianzar los conceptos.
+
+> [!TIP] Pista
+> Empezarías algo así:
+> ```JavaScript
+> const armas = [
+>     { nombre: "Espada de Fuego", poder: 80 },
+>     { nombre: "Daga del Aprendiz", poder: 30 },
+>     ...
+> ];
+> ```
+> Falta el bucle que recorra y la condición `if (arma.poder > 50)`.
+
+> [!IMPORTANT] Antes de continuar, verifica que:
+> - Entiendes la diferencia entre `pop()` y `shift()`.
+> - Puedes explicar el problema de "valor vs referencia" (el espejo).
+> - Sabes copiar un objeto/arreglo con el spread operator `...`.
