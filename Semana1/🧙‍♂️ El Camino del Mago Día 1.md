@@ -1,9 +1,3 @@
-# whoami
-## Dev. Adrian Rafael Camara Reque
-## FullStack - Desingner en Coder Blend
-## FullStack en Watcheye
-## Cofundador de Digital Services
-## & Estudiante en la Universidad Mayor de San Simón
 # Introducción a HTML y Estructura Básica
 ## 1. ¿Qué es HTML?
 
